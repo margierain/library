@@ -41,10 +41,4 @@ export default class App extends Component {
     );
   }
 }
-const config = {
-  consumer_key: process.env.consumerKey,
-  consumer_secret: process.env.consumerSecret,
-  access_token_key: process.env.accessTokenSecret,
-  access_token_secret: process.env.accessTokenKey
-}
 
