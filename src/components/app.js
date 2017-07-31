@@ -3,6 +3,12 @@ import axios from 'axios';
 import BookList from './bookList';
 import cors from 'cors';
 
+ const headerCors = {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Request-Method": "POST,GET,OPTIONS,PUT",
+      "Access-Control-Allow-Credentials":"true" ,
+      "Access-Control-Allow-Headers":"Origin,Accept, X-Requested-With, Content-Type "}
+
 export default class App extends Component {
   constructor(props) {
     super(props)
@@ -22,13 +28,12 @@ export default class App extends Component {
     this.fetchBooks()
   }
 
+
   tweetBook(book) {
-    console.log(book)
-    axios.post(`https://api.twitter.com/1.1/statuses/update.json?status=${book.title}`,
-     {headers: { "Access-Control-Allow-Origin": "*",
-     "Access-Control-Request-Method": "POST,GET,OPTIONS,PUT",
-     "Access-Control-Allow-Credentials":"true" ,
-    "Access-Control-Allow-Headers":"Origin,Accept, X-Requested-With, Content-Type "}})
+    axios.post(this.props.url, book)
+    .catch(err => {
+        console.log(err)
+      })
 
   }
 
