@@ -1,2 +1,5 @@
 # library
-borrow a book a tweet it
+ Torun the project 
+ `$ git clone git@github.com:margierain/library.git`
+ `$ npm install`
+ `$ npm start`
