@@ -38,6 +38,9 @@
     "nodemon": "^1.11.0",
     "path": "^0.12.7",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "twitter": "^1.7.1",
+    "twitter-js-client": "0.0.5",
+    "webpack-dotenv-plugin": "^2.0.2"
   }
 }

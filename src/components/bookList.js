@@ -6,8 +6,9 @@ import BookListItem from './bookItem';
 export default class BookList extends Component {
 
     renderBooks() {
+      const props = _.omit(this.props, 'books')
       return _.map(this.props.books, (book, index) =>
-      <BookListItem key={index} {...book}/>)
+      <BookListItem key={index} {...book} {...props}/>)
     }
     render() {
         return (

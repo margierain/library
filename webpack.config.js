@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const DotenvPlugin = require('webpack-dotenv-plugin');
 
 module.exports = {
     devtool: 'inline-source-map',
@@ -16,6 +17,12 @@ module.exports = {
         modules: ['node_modules', 'src'],
         extensions: ['.js']
     },
+    node: {
+        fs: 'empty',
+        net: 'empty',
+        tls: 'empty',
+        module: "empty"
+    },
     module: {
         loaders: [
         {
@@ -27,6 +34,11 @@ module.exports = {
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoEmitOnErrorsPlugin()
+        new webpack.NoEmitOnErrorsPlugin(),
+        new webpack.DefinePlugin({
+        'process.env': {
+          NODE_ENV: '"production"',
+        },
+      }),
     ]
 };
