@@ -25,7 +25,10 @@ export default class App extends Component {
   tweetBook(book) {
     console.log(book)
     axios.post(`https://api.twitter.com/1.1/statuses/update.json?status=${book.title}`,
-     {headers: { "Access-Control-Allow-Origin": "*" }})
+     {headers: { "Access-Control-Allow-Origin": "*",
+     "Access-Control-Request-Method": "POST,GET,OPTIONS,PUT",
+     "Access-Control-Allow-Credentials":"true" ,
+    "Access-Control-Allow-Headers":"Origin,Accept, X-Requested-With, Content-Type "}})
 
   }
 
