@@ -18,8 +18,8 @@ app.use('/api/v1', router)
 const config = {
   consumer_key: process.env.consumerKey,
   consumer_secret: process.env.consumerSecret,
-  access_token_key: process.env.accessTokenSecret,
-  access_token_secret: process.env.accessTokenKey
+  access_token_key: process.env.accessTokenKey,
+  access_token_secret: process.env.accessTokenSecret
 }
 
 const twitter = new Twitter(config);
